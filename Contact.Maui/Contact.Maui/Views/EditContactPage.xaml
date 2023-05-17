@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Contact.Maui.Views.EditContactPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              Title="EditContactPage">
 
 
@@ -10,14 +11,41 @@
         <Frame Padding="10,2,10,2">
             <HorizontalStackLayout>
                 <Label Text="Name" VerticalOptions="Center" WidthRequest="60" />
-                <Entry x:Name="entryName" VerticalOptions="Center" />
+                <Entry x:Name="entryName" VerticalOptions="Center" >
+                    <Entry.Behaviors>
+                        <toolkit:TextValidationBehavior
+                          x:Name="nameValidator"
+                            Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                            MinimumLength="1"
+                            />
+                    </Entry.Behaviors>
+                </Entry>
             </HorizontalStackLayout>
         </Frame>
 
         <Frame Padding="10,2,10,2">
             <HorizontalStackLayout>
                 <Label Text="Email" VerticalOptions="Center" WidthRequest="60" />
-                <Entry x:Name="entryEmail" VerticalOptions="Center" />
+                <Entry x:Name="entryEmail" VerticalOptions="Center" >
+                    <Entry.Behaviors>
+                        <toolkit:MultiValidationBehavior
+                          x:Name="emailValidator"
+                            Flags="ValidateOnAttaching,ValidateOnValueChanged">
+
+                            <toolkit:TextValidationBehavior
+                            Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                            MinimumLength="1"
+                            toolkit:MultiValidationBehavior.Error="Email is required"
+                            />
+                            <toolkit:EmailValidationBehavior
+                            Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                            toolkit:MultiValidationBehavior.Error="Email format is  Not Valid"
+                            />
+
+
+                        </toolkit:MultiValidationBehavior>
+                    </Entry.Behaviors>     
+                </Entry>
             </HorizontalStackLayout>
         </Frame>
 
