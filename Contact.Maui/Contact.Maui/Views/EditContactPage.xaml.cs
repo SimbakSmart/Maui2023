@@ -12,17 +12,13 @@ public partial class EditContactPage : ContentPage
 		InitializeComponent();
 	}
 
-    private void btnCanelContact_Clicked(object sender, EventArgs e)
-    {
-        Shell.Current.GoToAsync("..");
-    }
+  
     public string ContactId 
     {
 
         set 
         {  
             contact = ContactRepository.GetContactById(int.Parse(value));
-            lblName.Text = contact.Name;
         }
     }
 
