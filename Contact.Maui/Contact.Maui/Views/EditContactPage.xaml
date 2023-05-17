@@ -5,8 +5,10 @@
              Title="EditContactPage">
     <VerticalStackLayout>
         <Label 
+            x:Name="lblName"
             Text="This is the Edit Contact Page"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Button x:Name="btnCanelContact" Clicked="btnCanelContact_Clicked" Text="Cancel Contact" />
     </VerticalStackLayout>
 </ContentPage>
