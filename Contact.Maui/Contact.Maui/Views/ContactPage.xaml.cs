@@ -3,6 +3,7 @@
 
 namespace Contact.Maui.Views;
 
+using CommunityToolkit.Maui.Converters;
 using Contact.Maui.Models;
 using System.Collections.ObjectModel;
 using Contact = Contact.Maui.Models.Contact;
@@ -17,6 +18,7 @@ public partial class ContactPage : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
+        contactSearch.Text = string.Empty;
         LoadContacts();
 
 
@@ -57,4 +59,9 @@ public partial class ContactPage : ContentPage
         listContacts.ItemsSource = contacts;
     }
 
+    private void contactSearch_TextChanged(object sender, TextChangedEventArgs e)
+    {
+       var contacts = new ObservableCollection<Contact>(ContactRepository.SearchContacts(((SearchBar)sender).Text));
+        listContacts.ItemsSource = contacts;
+    }
 }
