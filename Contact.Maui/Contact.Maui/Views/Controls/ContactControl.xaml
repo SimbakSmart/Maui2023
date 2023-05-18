@@ -61,7 +61,7 @@
             </HorizontalStackLayout>
         </Frame>
 
-        <Button x:Name="btnSave" Clicked="btnSave_Clicked" Text="Update" />
+        <Button x:Name="btnSave" Clicked="btnSave_Clicked" Text="Save" />
         <Button x:Name="btnCancel" Clicked="btnCancel_Clicked" Text="Cancel" />
 
     </VerticalStackLayout>
