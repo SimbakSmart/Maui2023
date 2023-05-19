@@ -25,6 +25,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<IContactRepository, ContactInMemoryRepository>();
         builder.Services.AddSingleton<IViewContactsUseCase, ViewContactsUseCase>();
         builder.Services.AddSingleton<IViewContactUseCase, ViewContactUseCase>();
+        builder.Services.AddTransient<IEditContactUseCase, EditContactUseCase>();
+
         builder.Services.AddSingleton<ContactPage>();
         builder.Services.AddSingleton<EditContactPage>();
         return builder.Build();

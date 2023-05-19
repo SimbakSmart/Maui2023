@@ -88,5 +88,22 @@ namespace Contac.Plugins.DataStore.InMemory
 
             return Task.FromResult(contacts);
         }
+
+        public Task UpdateContactAsync(int contactId, Contact contact)
+        {
+
+            if(contactId != contact.ContactId) return Task.CompletedTask;
+
+            var contactToUpdate = _contact.FirstOrDefault(x => x.ContactId == contactId);
+            if (contactToUpdate != null)
+            {
+
+                contactToUpdate.Name = contact.Name;
+                contactToUpdate.Email = contact.Email;
+                contactToUpdate.Phone = contact.Phone;
+                contactToUpdate.Address = contact.Address;
+            }
+            return Task.CompletedTask;
+        }
     }
 }
