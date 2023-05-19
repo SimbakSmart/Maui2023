@@ -4,7 +4,7 @@ namespace Contact.UseCases
 {
     using Contact.UseCases.PluginInterfaces;
     using Contact = Contact.CoreBusiness.Contact;
-    public class ViewContactUseCase
+    public class ViewContactUseCase : IViewContactUseCase
     {
         private readonly IContactRepository contactRepository;
 
