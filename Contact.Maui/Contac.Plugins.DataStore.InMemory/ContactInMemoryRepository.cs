@@ -39,6 +39,14 @@ namespace Contac.Plugins.DataStore.InMemory
         };
         }
 
+        public Task AddContactAsync(Contact contact)
+        {
+            var maxId = _contact.Max(x => x.ContactId);
+            contact.ContactId = maxId + 1;
+            _contact.Add(contact);
+            return Task.CompletedTask;  
+        }
+
         public Task<Contact> GetContactByIdAsync(int contactId)
         {
            var contact = _contact.FirstOrDefault(x=>x.ContactId == contactId);
