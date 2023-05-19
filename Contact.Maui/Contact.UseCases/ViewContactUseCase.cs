@@ -1,9 +1,8 @@
-﻿
+﻿using Contact.UseCases.Interfaces;
+using Contact.UseCases.PluginInterfaces;
 
 namespace Contact.UseCases
 {
-    using Contact.UseCases.Interfaces;
-    using Contact.UseCases.PluginInterfaces;
     using Contact = Contact.CoreBusiness.Contact;
     public class ViewContactUseCase : IViewContactUseCase
     {
@@ -14,9 +13,9 @@ namespace Contact.UseCases
             this.contactRepository = contactRepository;
         }
 
-        public async Task<List<Contact>> ExecuteAsync(string filterText)
+        public async Task<Contact> ExecuteAsync(int contactId)
         {
-            return await this.contactRepository.GetContactsAsync(filterText);
+            return await this.contactRepository.GetContactByIdAsync(contactId);
         }
     }
 }

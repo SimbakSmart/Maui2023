@@ -10,9 +10,9 @@ using System.Collections.ObjectModel;
 using Contact = Contact.Maui.Models.Contact;
 public partial class ContactPage : ContentPage
 {
-    private readonly IViewContactUseCase viewContactUseCase;
+    private readonly IViewContactsUseCase viewContactUseCase;
 
-    public ContactPage(IViewContactUseCase viewContactUseCase)
+    public ContactPage(IViewContactsUseCase viewContactUseCase)
     {
         InitializeComponent();
         this.viewContactUseCase = viewContactUseCase;
@@ -33,7 +33,7 @@ public partial class ContactPage : ContentPage
     {
        if(listContacts.SelectedItem != null)
         {
-            await Shell.Current.GoToAsync($"{nameof(EditContactPage)}?Id={((Contact)listContacts.SelectedItem).ContactId}");
+            await Shell.Current.GoToAsync($"{nameof(EditContactPage)}?Id={((CoreBusiness.Contact)listContacts.SelectedItem).ContactId}");
         }
     }
 
