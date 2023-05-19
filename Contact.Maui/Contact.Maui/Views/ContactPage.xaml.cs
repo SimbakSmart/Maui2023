@@ -5,14 +5,17 @@ namespace Contact.Maui.Views;
 
 using CommunityToolkit.Maui.Converters;
 using Contact.Maui.Models;
+using Contact.UseCases.Interfaces;
 using System.Collections.ObjectModel;
 using Contact = Contact.Maui.Models.Contact;
 public partial class ContactPage : ContentPage
 {
-    public ContactPage()
+    private readonly IViewContactUseCase viewContactUseCase;
+
+    public ContactPage(IViewContactUseCase viewContactUseCase)
     {
         InitializeComponent();
-       
+        this.viewContactUseCase = viewContactUseCase;
     }
 
     protected override void OnAppearing()
@@ -53,15 +56,16 @@ public partial class ContactPage : ContentPage
 
 
     }
-    private void LoadContacts()
+    private async void LoadContacts()
     {
-        var contacts = new ObservableCollection<Contact>(ContactRepository.GetContacts());
+        var contacts = new ObservableCollection<CoreBusiness.Contact>(await this.viewContactUseCase.ExecuteAsync(string.Empty));
         listContacts.ItemsSource = contacts;
     }
 
-    private void contactSearch_TextChanged(object sender, TextChangedEventArgs e)
+    private async void contactSearch_TextChanged(object sender, TextChangedEventArgs e)
     {
-       var contacts = new ObservableCollection<Contact>(ContactRepository.SearchContacts(((SearchBar)sender).Text));
+        // var contacts = new ObservableCollection<Contact>(ContactRepository.SearchContacts(((SearchBar)sender).Text));
+        var contacts = new ObservableCollection<CoreBusiness.Contact>(await this.viewContactUseCase.ExecuteAsync(((SearchBar)sender).Text));
         listContacts.ItemsSource = contacts;
     }
 }

@@ -40,6 +40,10 @@ namespace Contac.Plugins.DataStore.InMemory
         }
         public  Task<List<Contact>> GetContactsAsync(string filterText)
         {
+            if (string.IsNullOrEmpty(filterText))
+            {
+                return Task.FromResult(_contact);
+            }
             var contacts = _contact.Where(x => !string.IsNullOrWhiteSpace(x.Name)
            && x.Name.StartsWith(filterText, StringComparison.OrdinalIgnoreCase))?.ToList();
 

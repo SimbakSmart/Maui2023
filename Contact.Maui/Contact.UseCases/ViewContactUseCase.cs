@@ -2,6 +2,7 @@
 
 namespace Contact.UseCases
 {
+    using Contact.UseCases.Interfaces;
     using Contact.UseCases.PluginInterfaces;
     using Contact = Contact.CoreBusiness.Contact;
     public class ViewContactUseCase : IViewContactUseCase
