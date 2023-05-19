@@ -47,6 +47,16 @@ namespace Contac.Plugins.DataStore.InMemory
             return Task.CompletedTask;  
         }
 
+        public Task DeleteContactAsync(int contactId)
+        {
+            var contact = _contact.FirstOrDefault(x => x.ContactId == contactId);
+            if (contact != null)
+            {
+                _contact.Remove(contact);
+            }
+            return Task.CompletedTask;
+        }
+
         public Task<Contact> GetContactByIdAsync(int contactId)
         {
            var contact = _contact.FirstOrDefault(x=>x.ContactId == contactId);
