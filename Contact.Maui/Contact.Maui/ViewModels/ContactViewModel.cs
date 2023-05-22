@@ -8,12 +8,25 @@ namespace Contact.Maui.ViewModels
     using Contac = Contact.Maui.Models.Contact;
     public partial class ContactViewModel:ObservableObject
     {
-        public Contac Contact { get; set; }
+        private Contac contact;
+        public Contac Contact
+        {
+            get=>contact;
+            set 
+            { 
+             SetProperty(ref contact, value);
+            }
+        }
 
         public ContactViewModel()
         {
 
-            this.Contact = ContactRepository.GetContactById(1);
+            this.Contact =new Contac();
+        }
+
+        public void LoadContact(int contactId)
+        {
+            this.Contact = ContactRepository.GetContactById(contactId);
         }
 
        [RelayCommand]
