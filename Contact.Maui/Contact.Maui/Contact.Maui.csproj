@@ -79,6 +79,9 @@
 	  <MauiXaml Update="Views_MVM\Contacts_MVVM_Page.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views_MVM\EditContactPage_MVVM.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

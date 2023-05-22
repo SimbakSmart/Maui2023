@@ -31,11 +31,13 @@ public static class MauiProgram
         builder.Services.AddTransient<IAddContactUseCase, AddContactUseCase>();
         builder.Services.AddTransient<IDeleteContactUseCase, DeleteContactUseCase>();
         builder.Services.AddSingleton<ContactsViewModels>();
+        builder.Services.AddSingleton<ContactViewModel>();
 
         builder.Services.AddSingleton<ContactPage>();
         builder.Services.AddSingleton<EditContactPage>();
         builder.Services.AddSingleton<AddContactPage>();
         builder.Services.AddSingleton<Contacts_MVVM_Page>();
+        builder.Services.AddSingleton<EditContactPage_MVVM>();
         return builder.Build();
     }
 }

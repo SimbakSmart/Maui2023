@@ -31,18 +31,22 @@
                 
                         <SwipeView>
                             <SwipeView.RightItems>
-                                <SwipeItems>
-                                    <SwipeItem Text="Delete"
+                            <SwipeItems>
+                                <SwipeItem Text="Delete"
                                                IsDestructive="True"
                                                BackgroundColor="Red"
                                                Command="{Binding Source={x:Reference ContactsCollection}, Path=BindingContext.DeleteContactCommand}"
                                                CommandParameter="{Binding ContactId}">
-                                    </SwipeItem>
-                                    <SwipeItem Text="Edit"
+                                </SwipeItem>
+                                <SwipeItem Text="Edit"
                                                IsDestructive="False"
-                                               BackgroundColor="Green"></SwipeItem>
-                                </SwipeItems>
-                            </SwipeView.RightItems>
+                                                BackgroundColor="Green"
+                                               Command="{Binding Source={x:Reference ContactsCollection}, Path=BindingContext.GotoEditContactCommand}"
+                                               CommandParameter="{Binding ContactId}" />
+
+                            </SwipeItems>
+
+                        </SwipeView.RightItems>
                         <StackLayout>
 
                             <Frame Margin="0,5,0,5" >

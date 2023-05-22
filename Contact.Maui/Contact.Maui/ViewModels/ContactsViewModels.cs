@@ -2,6 +2,7 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Contact.Maui.Views_MVM;
 using Contact.UseCases.Interfaces;
 using System.Collections.ObjectModel;
 
@@ -45,6 +46,12 @@ namespace Contact.Maui.ViewModels
         {
             await deleteContactUseCase.ExecuteAsync(contactId);
             await LoadContactAsync();
+        }
+
+        [RelayCommand]
+        public async Task GotoEditContact(int contactId)
+        {
+            await Shell.Current.GoToAsync($"{nameof(EditContactPage_MVVM)}?Id={contactId}");
         }
     }
 }
