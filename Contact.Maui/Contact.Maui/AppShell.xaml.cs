@@ -1,4 +1,5 @@
 ﻿using Contact.Maui.Views;
+using Contact.Maui.Views_MVM;
 
 namespace Contact.Maui;
 
@@ -12,5 +13,6 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(AddContactPage), typeof(AddContactPage));
         Routing.RegisterRoute(nameof(EditContactPage), typeof(EditContactPage));
         Routing.RegisterRoute(nameof(TestPage), typeof(TestPage));
+        Routing.RegisterRoute(nameof(Contacts_MVVM_Page),typeof(Contacts_MVVM_Page));
     }
 }

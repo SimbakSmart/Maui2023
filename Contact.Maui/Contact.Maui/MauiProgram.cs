@@ -4,7 +4,9 @@ using CommunityToolkit.Maui;
 namespace Contact.Maui;
 using CommunityToolkit.Maui;
 using Contac.Plugins.DataStore.InMemory;
+using Contact.Maui.ViewModels;
 using Contact.Maui.Views;
+using Contact.Maui.Views_MVM;
 using Contact.UseCases;
 using Contact.UseCases.Interfaces;
 using Contact.UseCases.PluginInterfaces;
@@ -28,10 +30,12 @@ public static class MauiProgram
         builder.Services.AddTransient<IEditContactUseCase, EditContactUseCase>();
         builder.Services.AddTransient<IAddContactUseCase, AddContactUseCase>();
         builder.Services.AddTransient<IDeleteContactUseCase, DeleteContactUseCase>();
+        builder.Services.AddSingleton<ContactsViewModels>();
 
         builder.Services.AddSingleton<ContactPage>();
         builder.Services.AddSingleton<EditContactPage>();
         builder.Services.AddSingleton<AddContactPage>();
+        builder.Services.AddSingleton<Contacts_MVVM_Page>();
         return builder.Build();
     }
 }
