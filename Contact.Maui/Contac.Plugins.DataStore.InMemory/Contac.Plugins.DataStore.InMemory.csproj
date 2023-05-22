@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Contact.CoreBusiness\Contact.CoreBusiness.csproj" />
     <ProjectReference Include="..\Contact.UseCases\Contact.UseCases.csproj" />
   </ItemGroup>
