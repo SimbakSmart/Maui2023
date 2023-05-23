@@ -1,4 +1,5 @@
 using Contacts.WebApi.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Contacts.WebApi
@@ -24,11 +25,20 @@ namespace Contacts.WebApi
 
             //  app.UseAuthorization();
 
-            app.MapGet("/api/contacts", async (ApplicationDbContext db) =>
+            app.MapGet("/api/contacts", async ([FromQuery] string? s, ApplicationDbContext db) =>
             {
-                var contacts = await db.Contacts.ToListAsync();
+                List<Contact> contacts;
+                if (string.IsNullOrWhiteSpace(s))
+                    contacts = await db.Contacts.ToListAsync();
+                else
+                    contacts = await db.Contacts.Where(x =>
+                        !string.IsNullOrWhiteSpace(x.Name) && x.Name.ToLower().IndexOf(s.ToLower()) >= 0 ||
+                        !string.IsNullOrWhiteSpace(x.Email) && x.Email.ToLower().IndexOf(s.ToLower()) >= 0 ||
+                        !string.IsNullOrWhiteSpace(x.Address) && x.Address.ToLower().IndexOf(s.ToLower()) >= 0 ||
+                        !string.IsNullOrWhiteSpace(x.Phone) && x.Phone.ToLower().IndexOf(s.ToLower()) >= 0).ToListAsync();
                 return Results.Ok(contacts);
             });
+
 
             app.MapPost("/api/contacts", async (Contact contact, ApplicationDbContext db) =>
             {

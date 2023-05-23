@@ -52,3 +52,7 @@ https://localhost:7043/api/contacts/5
 
 DELETE DATA
 https://localhost:7043/api/contacts/5
+
+
+SERACH BY 
+https://localhost:7043/api/contacts?s=Bran
