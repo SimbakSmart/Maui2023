@@ -10,6 +10,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contact.UseCases", "Contact.UseCases\Contact.UseCases.csproj", "{067E3ABF-3143-4CF9-955C-DCD4680E228B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{3D661663-C7F1-463E-A40A-6B9AEF11932A}"
+	ProjectSection(SolutionItems) = preProject
+		Notes.txt = Notes.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contac.Plugins.DataStore.InMemory", "Contac.Plugins.DataStore.InMemory\Contac.Plugins.DataStore.InMemory.csproj", "{85B027E9-BD90-47AB-B5F3-A1E4420EE3E7}"
 EndProject

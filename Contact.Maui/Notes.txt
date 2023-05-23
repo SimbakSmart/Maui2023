@@ -1,0 +1,35 @@
+
+
+POST DATA
+
+https://localhost:7043/api/contacts
+
+{
+    "Name":"Bran Tomas",
+    "Email":"bran.tomas@gmail.com",
+    "Phone":"416-123-964",
+    "Address":"23 Toronto St, Onatorio Canada"
+}
+
+{
+    "Name":"Liza Mertz",
+    "Email":"liza.mertz@gmail.com",
+    "Phone":"586-134-342",
+    "Address":"236 Texas Ave, Texas Tx"
+}
+
+
+{
+    "Name":"Marlon Pit",
+    "Email":"marlon.pits@gmail.com",
+    "Phone":"696-989-584",
+    "Address":"54 Sanantonio Tx , Texax Tx"
+}
+
+
+{
+    "Name":"Karla Saldi",
+    "Email":"karl.saldi@gmail.com",
+    "Phone":"965-784-6544",
+    "Address":"896 Frozen City, New York"
+}

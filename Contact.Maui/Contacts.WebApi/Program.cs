@@ -1,3 +1,4 @@
+using Contacts.WebApi.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Contacts.WebApi
@@ -27,6 +28,12 @@ namespace Contacts.WebApi
             {
                 var contacts = await db.Contacts.ToListAsync();
                 return Results.Ok(contacts);
+            });
+
+            app.MapPost("/api/contacts", async (Contact contact, ApplicationDbContext db) =>
+            {
+                db.Contacts.Add(contact);
+                await db.SaveChangesAsync();
             });
 
 
