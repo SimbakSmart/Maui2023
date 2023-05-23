@@ -59,6 +59,7 @@
 	  <ProjectReference Include="..\Contact.CoreBusiness\Contact.CoreBusiness.csproj" />
 	  <ProjectReference Include="..\Contact.UseCases\Contact.UseCases.csproj" />
 	  <ProjectReference Include="..\Contacts.Plugins.DataStore.SQLLite\Contacts.Plugins.DataStore.SQLLite.csproj" />
+	  <ProjectReference Include="..\Contacts.Plugins.DataStore.WebApi\Contacts.Plugins.DataStore.WebApi.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

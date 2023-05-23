@@ -39,6 +39,12 @@ namespace Contacts.WebApi
                 return Results.Ok(contacts);
             });
 
+            app.MapGet("/api/contacts/{id}", async (int id, ApplicationDbContext db) =>
+            {
+                var contact = db.Contacts.FirstOrDefault(x => x.ContactId == id);
+                return Results.Ok(contact);
+            });
+
 
             app.MapPost("/api/contacts", async (Contact contact, ApplicationDbContext db) =>
             {

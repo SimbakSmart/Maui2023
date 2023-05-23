@@ -4,9 +4,9 @@
     public class Constants
     {
        // public const string WebApiBaseUrl = "http://10.0.2.2:5097/api";
-        public const string WebApiBaseUrl = "https://localhost:7043/api";
+       // public const string WebApiBaseUrl = "https://localhost:7043/api";
+        public const string WebApiBaseUrl = "https://10.0.2.2:7043/api";
 
- 
-        
+
     }
 }

@@ -20,6 +20,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.Plugins.DataStore.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.WebApi", "Contacts.WebApi\Contacts.WebApi.csproj", "{0AB6F9F3-F59F-47C8-90F2-249AA10550A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.Plugins.DataStore.WebApi", "Contacts.Plugins.DataStore.WebApi\Contacts.Plugins.DataStore.WebApi.csproj", "{497787EF-B635-4EEF-A580-70AF151CF078}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{0AB6F9F3-F59F-47C8-90F2-249AA10550A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AB6F9F3-F59F-47C8-90F2-249AA10550A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AB6F9F3-F59F-47C8-90F2-249AA10550A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{497787EF-B635-4EEF-A580-70AF151CF078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{497787EF-B635-4EEF-A580-70AF151CF078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{497787EF-B635-4EEF-A580-70AF151CF078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{497787EF-B635-4EEF-A580-70AF151CF078}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{85B027E9-BD90-47AB-B5F3-A1E4420EE3E7} = {3D661663-C7F1-463E-A40A-6B9AEF11932A}
 		{94296122-F9CF-4712-AB5F-82588A412BBC} = {3D661663-C7F1-463E-A40A-6B9AEF11932A}
+		{497787EF-B635-4EEF-A580-70AF151CF078} = {3D661663-C7F1-463E-A40A-6B9AEF11932A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
