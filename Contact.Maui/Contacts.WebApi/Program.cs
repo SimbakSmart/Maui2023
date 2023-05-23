@@ -21,9 +21,14 @@ namespace Contacts.WebApi
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            //  app.UseAuthorization();
 
-        
+            app.MapGet("/api/contacts", async (ApplicationDbContext db) =>
+            {
+                var contacts = await db.Contacts.ToListAsync();
+                return Results.Ok(contacts);
+            });
+
 
             app.Run();
         }
