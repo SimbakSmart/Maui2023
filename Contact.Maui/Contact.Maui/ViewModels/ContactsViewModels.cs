@@ -26,10 +26,22 @@ namespace Contact.Maui.ViewModels
 
         }
 
-        public async Task LoadContactAsync()
+        private string filterText;
+
+        public string FilterText
+        {
+            get { return filterText; }
+            set
+            {
+                filterText = value;
+                LoadContactAsync(filterText);
+            }
+        }
+
+        public async Task LoadContactAsync(string filterText = null)
         {
            this.Contacts.Clear();
-            var contacts = await viewContactsUseCase.ExecuteAsync(null);
+            var contacts = await viewContactsUseCase.ExecuteAsync(filterText);
 
             if(contacts != null && contacts.Count >0)
             {
