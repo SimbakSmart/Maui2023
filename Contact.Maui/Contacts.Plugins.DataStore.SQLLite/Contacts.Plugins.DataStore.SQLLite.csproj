@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net7.0;net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
@@ -19,6 +19,11 @@
 
 	<ItemGroup>
 	  <PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Contact.CoreBusiness\Contact.CoreBusiness.csproj" />
+	  <ProjectReference Include="..\Contact.UseCases\Contact.UseCases.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -10,6 +10,7 @@ using Contact.Maui.Views_MVM;
 using Contact.UseCases;
 using Contact.UseCases.Interfaces;
 using Contact.UseCases.PluginInterfaces;
+using Contacts.Plugins.DataStore.SQLLite;
 
 public static class MauiProgram
 {
@@ -24,7 +25,10 @@ public static class MauiProgram
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
-        builder.Services.AddSingleton<IContactRepository, ContactInMemoryRepository>();
+
+        
+        //builder.Services.AddSingleton<IContactRepository, ContactInMemoryRepository>();
+        builder.Services.AddSingleton<IContactRepository, ContactSQLiteRepository>();
         builder.Services.AddSingleton<IViewContactsUseCase, ViewContactsUseCase>();
         builder.Services.AddSingleton<IViewContactUseCase, ViewContactUseCase>();
         builder.Services.AddTransient<IEditContactUseCase, EditContactUseCase>();
